@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Домашняя страница
+{% endblock title %}
+
+
+
+{% block content %}
+{% url "parser:parse_user_input" as parsing %}
+{% url "parser:chart_user_input" as chart %}
+
+ <div class="row mt-5 ">
+
+        <div class="col d-flex justify-content-center mt-3">
+
+			<a href="{{parsing}}" class="btn btn-primary">Парсинг</a>
+		</div>
+		<div class="col d-flex justify-content-center mt-3">
+
+			<a href="{{chart}}" class="btn btn-primary">Построение графиков</a>
+		</div>
+
+</div>
+
+{% endblock content %}
+
+

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Ввод для постровения графиков
+{% endblock title %}
+
+
+
+{% block content %}
+
+ <div class="row mt-5 ">
+
+        <div class="col d-flex justify-content-center">
+            
+
+                <form action="" method="POST">
+                {%csrf_token%}
+                <p class="text-justify">Введите данные для построения графиков</p>
+                <div class="mt-1">
+                   {{form}} 
+                </div>
+                
+                <div class="mt-3">
+                   {{form2}} 
+                </div>
+                <button type="submit" class="save btn btn-primary mt-1">Построить графики</button>
+                </form>                
+            
+        </div>
+</div>
+
+
+
+
+
+{% endblock content %}

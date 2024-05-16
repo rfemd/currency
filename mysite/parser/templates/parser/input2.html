@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Ввод для парсинга
+{% endblock title %}
+
+
+
+{% block content %}
+
+
+ <div class="row  mt-5 ">
+
+        
+        <div class="col d-flex justify-content-center">
+            
+            <form action="" method="POST">
+                {%csrf_token%}
+                <p>Укажите диапазон дат в пределах <b>2х лет</b></p>
+                {{form}}
+                <button type="submit" class="save btn btn-primary mt-1">Парсинг</button>
+            </form>
+
+        </div>
+</div>
+{% endblock content %}

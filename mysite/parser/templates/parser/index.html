@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+График изменений курсов валют за указанный период
+{% endblock title %}
+
+
+
+{% block content %}
+
+          <div>
+            <canvas id="myChart"></canvas>
+          </div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: {{labels|safe}},
+      datasets: [{
+        label: {{label1|safe}},
+        data: {{data1|safe}},
+        borderWidth: 1
+      },
+      {
+        label: {{label2|safe}},
+        data: {{data2|safe}},
+        borderWidth: 1
+      },
+      {
+        label: {{label3|safe}},
+        data: {{data3|safe}},
+        borderWidth: 1
+      },
+      {
+        label: {{label4|safe}},
+        data: {{data4|safe}},
+        borderWidth: 1
+      },
+      {
+        label: {{label5|safe}},
+        data: {{data5|safe}},
+        borderWidth: 1
+      },
+
+      ]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+{% endblock content %}
